@@ -238,6 +238,7 @@ public class Main {
                         Bookk book1 = ls.getBookk(choice2-1);
                         if(book1.getAvailableCopies() >0)
                         {
+                            System.out.println("Enter the number of copies you need: ");
                             int numOfCopies = scanner.nextInt();
                             if(numOfCopies <= book1.getAvailableCopies())
                             {
@@ -398,102 +399,101 @@ for (Person person : handler.getPeople()) {
 
 
 
-/*
-import java.io.*;
-import java.util.ArrayList;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
-public class JsonObjectHandler {
-    private ArrayList<Person> people;
-    private static final String FILE_PATH = "people.json";
-
-    public JsonObjectHandler() {
-        this.people = new ArrayList<>();
-    }
-
-    // Add a person to the ArrayList
-    public void addPerson(Person person) {
-        people.add(person);
-    }
-
-    // Save ArrayList to JSON file
-    public void saveToJson() {
-        JSONArray jsonArray = new JSONArray();
-
-        for (Person person : people) {
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put("name", person.getName());
-            jsonObject.put("age", person.getAge());
-            jsonObject.put("email", person.getEmail());
-            jsonArray.add(jsonObject);
-        }
-
-        try (FileWriter file = new FileWriter(FILE_PATH)) {
-            file.write(jsonArray.toJSONString());
-            file.flush();
-            System.out.println("Successfully saved to JSON file");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // Read from JSON file and populate ArrayList
-    public void loadFromJson() {
-        JSONParser parser = new JSONParser();
-
-        try (FileReader reader = new FileReader(FILE_PATH)) {
-            Object obj = parser.parse(reader);
-            JSONArray jsonArray = (JSONArray) obj;
-
-            people.clear(); // Clear existing list
-
-            for (Object item : jsonArray) {
-                JSONObject jsonObject = (JSONObject) item;
-                String name = (String) jsonObject.get("name");
-                long age = (Long) jsonObject.get("age");
-                String email = (String) jsonObject.get("email");
-
-                people.add(new Person(name, (int) age, email));
-            }
-
-            System.out.println("Successfully loaded from JSON file");
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // Get all people
-    public ArrayList<Person> getPeople() {
-        return people;
-    }
-}
-
-// Person class to store object data
-class Person {
-    private String name;
-    private int age;
-    private String email;
-
-    public Person(String name, int age, String email) {
-        this.name = name;
-        this.age = age;
-        this.email = email;
-    }
-
-    // Getters and setters
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-    public int getAge() { return age; }
-    public void setAge(int age) { this.age = age; }
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
-
-    @Override
-    public String toString() {
-        return "Person{name='" + name + "', age=" + age + ", email='" + email + "'}";
-    }
-}
- */
+//import java.io.*;
+//import java.util.ArrayList;
+//import org.json.simple.JSONArray;
+//import org.json.simple.JSONObject;
+//import org.json.simple.parser.JSONParser;
+//import org.json.simple.parser.ParseException;
+//
+//public class JsonObjectHandler {
+//    private ArrayList<Person> people;
+//    private static final String FILE_PATH = "people.json";
+//
+//    public JsonObjectHandler() {
+//        this.people = new ArrayList<>();
+//    }
+//
+//    // Add a person to the ArrayList
+//    public void addPerson(Person person) {
+//        people.add(person);
+//    }
+//
+//    // Save ArrayList to JSON file
+//    public void saveToJson() {
+//        JSONArray jsonArray = new JSONArray();
+//
+//        for (Person person : people) {
+//            JSONObject jsonObject = new JSONObject();
+//            jsonObject.put("name", person.getName());
+//            jsonObject.put("age", person.getAge());
+//            jsonObject.put("email", person.getEmail());
+//            jsonArray.add(jsonObject);
+//        }
+//
+//        try (FileWriter file = new FileWriter(FILE_PATH)) {
+//            file.write(jsonArray.toJSONString());
+//            file.flush();
+//            System.out.println("Successfully saved to JSON file");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    // Read from JSON file and populate ArrayList
+//    public void loadFromJson() {
+//        JSONParser parser = new JSONParser();
+//
+//        try (FileReader reader = new FileReader(FILE_PATH)) {
+//            Object obj = parser.parse(reader);
+//            JSONArray jsonArray = (JSONArray) obj;
+//
+//            people.clear(); // Clear existing list
+//
+//            for (Object item : jsonArray) {
+//                JSONObject jsonObject = (JSONObject) item;
+//                String name = (String) jsonObject.get("name");
+//                long age = (Long) jsonObject.get("age");
+//                String email = (String) jsonObject.get("email");
+//
+//                people.add(new Person(name, (int) age, email));
+//            }
+//
+//            System.out.println("Successfully loaded from JSON file");
+//        } catch (IOException | ParseException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    // Get all people
+//    public ArrayList<Person> getPeople() {
+//        return people;
+//    }
+//}
+//
+//// Person class to store object data
+//class Person {
+//    private String name;
+//    private int age;
+//    private String email;
+//
+//    public Person(String name, int age, String email) {
+//        this.name = name;
+//        this.age = age;
+//        this.email = email;
+//    }
+//
+//    // Getters and setters
+//    public String getName() { return name; }
+//    public void setName(String name) { this.name = name; }
+//    public int getAge() { return age; }
+//    public void setAge(int age) { this.age = age; }
+//    public String getEmail() { return email; }
+//    public void setEmail(String email) { this.email = email; }
+//
+//    @Override
+//    public String toString() {
+//        return "Person{name='" + name + "', age=" + age + ", email='" + email + "'}";
+//    }
+//}
